@@ -1,0 +1,12 @@
+{
+  "id": 4,
+  "level": 1,
+  "cost_diamond": 0,
+  "cost_sapphire": 2,
+  "cost_emerald": 0,
+  "cost_ruby": 0,
+  "cost_onyx": 2,
+  "points_value": 0,
+  "provides": 0,
+  "image_file": "blank.png"
+}

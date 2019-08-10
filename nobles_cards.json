@@ -1,0 +1,93 @@
+{
+  "cards": [{
+    "name": "Elisabeth of Austria",
+    "required_cards_diamond": 3,
+    "required_cards_sapphire": 3,
+    "required_cards_emerald": 0,
+    "required_cards_ruby": 0,
+    "required_cards_onyx": 3,
+    "points_value": 3,
+    "image-file": "blank2.png"
+  }, {
+    "name": "Catherine de Medici",
+    "required_cards_diamond": 0,
+    "required_cards_sapphire": 3,
+    "required_cards_emerald": 3,
+    "required_cards_ruby": 3,
+    "required_cards_onyx": 0,
+    "points_value": 3,
+    "image-file": "blank2.png"
+  }, {
+    "name": "Charles V",
+    "required_cards_diamond": 3,
+    "required_cards_sapphire": 0,
+    "required_cards_emerald": 0,
+    "required_cards_ruby": 3,
+    "required_cards_onyx": 3,
+    "points_value": 3,
+    "image-file": "blank2.png"
+  }, {
+    "name": "Mary Stuart",
+    "required_cards_diamond": 0,
+    "required_cards_sapphire": 0,
+    "required_cards_emerald": 4,
+    "required_cards_ruby": 4,
+    "required_cards_onyx": 0,
+    "points_value": 3,
+    "image-file": "blank2.png"
+  }, {
+    "name": "Suleiman the Magnificent",
+    "required_cards_diamond": 0,
+    "required_cards_sapphire": 4,
+    "required_cards_emerald": 4,
+    "required_cards_ruby": 0,
+    "required_cards_onyx": 0,
+    "points_value": 3,
+    "image-file": "blank2.png"
+  }, {
+    "name": "Henry VII",
+    "required_cards_diamond": 0,
+    "required_cards_sapphire": 0,
+    "required_cards_emerald": 0,
+    "required_cards_ruby": 4,
+    "required_cards_onyx": 4,
+    "points_value": 3,
+    "image-file": "blank2.png"
+  }, {
+    "name": "Isabella I of Castile",
+    "required_cards_diamond": 4,
+    "required_cards_sapphire": 0,
+    "required_cards_emerald": 0,
+    "required_cards_ruby": 0,
+    "required_cards_onyx": 4,
+    "points_value": 3,
+    "image-file": "blank2.png"
+  }, {
+    "name": "Anne of Brittany",
+    "required_cards_diamond": 3,
+    "required_cards_sapphire": 3,
+    "required_cards_emerald": 3,
+    "required_cards_ruby": 0,
+    "required_cards_onyx": 0,
+    "points_value": 3,
+    "image-file": "blank2.png"
+  }, {
+    "name": "Francis I of France",
+    "required_cards_diamond": 0,
+    "required_cards_sapphire": 0,
+    "required_cards_emerald": 3,
+    "required_cards_ruby": 3,
+    "required_cards_onyx": 3,
+    "points_value": 3,
+    "image-file": "blank2.png"
+  }, {
+    "name": "Niccolò Machiavelli",
+    "required_cards_diamond": 4,
+    "required_cards_sapphire": 4,
+    "required_cards_emerald": 0,
+    "required_cards_ruby": 0,
+    "required_cards_onyx": 0,
+    "points_value": 3,
+    "image-file": "blank2.png"
+  }]
+}
