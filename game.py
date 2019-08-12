@@ -53,25 +53,29 @@ class BrilliantGame():
     # deck_level_2
     # deck_level_3
 
+    player_names = ['Alice', 'Bob', 'Chris', 'Diane']
+
     def __init__(self, number_of_players):
         # check if number of players is at least 2
         self.number_of_players = number_of_players
         print(f"Starting game with {self.number_of_players} players.")
 
         # don't hardcode stuff in here...
-        self.players = [Player('Alice'), Player('Bob'), Player('Chris')]
+        # self.players = [Player('Alice'), Player('Bob'), Player('Chris')]
+        self.players = [Player(self.player_names[i], self)
+                        for i in range(self.number_of_players)]
         self.deck1 = DevelopmentDeck(
-            None, 'development_cards.json', {'level': 1})
+            None, 'gamedata/development_cards.json', {'level': 1})
         self.deck2 = DevelopmentDeck(
-            None, 'development_cards.json', {'level': 2})
+            None, 'gamedata/development_cards.json', {'level': 2})
         self.deck3 = DevelopmentDeck(
-            None, 'development_cards.json', {'level': 3})
-        self.deckn = NoblesDeck(None, 'nobles_cards.json')
+            None, 'gamedata/development_cards.json', {'level': 3})
+        self.deckn = NoblesDeck(None, 'gamedata/nobles_cards.json')
         self.field = Field(self)
 
     def debug(self):
         # print('Players:')
-        # print([p.render() for p in self.players])
+        print([p.name for p in self.players])
         print('Deck 1: [' + ', '.join([str(self.deck1[i]['id'])
                                        for i in range(4)]) + ']')
         print('Deck 2: [' + ', '.join([str(self.deck2[i]['id'])
@@ -98,8 +102,9 @@ class Player():
     # utility
         # is
 
-    def __init__(self, name):
+    def __init__(self, name, game):
         self.name = name
+        self.game = game
         self.gems = GemStack()
         self.development_cards = []
         self.reserved_development_cards = []
@@ -109,7 +114,37 @@ class Player():
         # returns playerstate
         # pass
         return self.__dict__
-        #return {'name': self.name}
+        # return {'name': self.name}
+
+    def action_take_3_different_gems(self, chosen_gems_list):
+        print('action_take_3_different_gems')
+        field_gems = self.game.field.gems
+        player_gems = self.gems
+
+        if len(chosen_gems_list) != 3:
+            return {'status': 'FAIL', 'message': 'Select exactly 3 gems.'}
+        if len(chosen_gems_list) != len(set(chosen_gems_list)):
+            return {'status': 'failure', 'message': 'Select 3 _different_gems.'}
+
+        print('Checking for gems')
+        for gem in chosen_gems_list:
+            if field_gems[gem] < 1:
+                return {'status': 'failure', 'message': 'Not enough '+gem}
+
+        print('Collecting gems')
+        for gem in chosen_gems_list:
+            field_gems[gem] -= 1
+            player_gems[gem] += 1
+
+        # check if more than 10? force discard?
+        return {'status': 'succes', 'message': ''}
+
+        # print(self.gems)
+        # print(self.game.field.gems)
+        # check gems arent the same
+        # check if gems are available
+        # do transaction
+        # require discard?
 
 
 class Card(ABC):
@@ -248,5 +283,14 @@ class GemStack:
     onyx: int = 0
     gold: int = 0
 
-    def render():
+    def total(self):
+        return sum([g for g in vars(self)])
+
+    def __getitem__(self, key):
+        return getattr(self, key)
+
+    def __setitem__(self, key, val):
+        return setattr(self, key, val)
+
+    def render(self):
         return self.__dict__

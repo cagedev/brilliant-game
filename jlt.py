@@ -1,9 +1,20 @@
+# debug game implementation
+
 from game import DevelopmentDeck, BrilliantGame
 # from game import DevelopmentCard
 import json
 
 new_game = BrilliantGame(3)
-new_game.debug()
+# new_game.debug()
+print(new_game.field.gems)
+print(new_game.players[1].gems)
+print(
+    new_game.players[1].action_take_3_different_gems(
+        ['ruby', 'diamond', 'emerald'])['status']
+)
+print(new_game.field.gems)
+print(new_game.players[1].gems)
+
 # print(new_game.__dict__)
 # new_game.deck1.shuffle()
 # new_game.deck2.shuffle()
